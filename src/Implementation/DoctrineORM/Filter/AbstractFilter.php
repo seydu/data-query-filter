@@ -1,11 +1,13 @@
 <?php
 
 
-namespace Seydu\DataQueryFilter\Implementation\DoctrineORM;
+namespace Seydu\DataQueryFilter\Implementation\DoctrineORM\Filter;
 
 
 use Seydu\DataQueryFilter\FilterInterface;
 use Seydu\DataQueryFilter\FilterQueryBuilderInterface;
+use Seydu\DataQueryFilter\Implementation\DoctrineORM\FilterDefinition;
+use Seydu\DataQueryFilter\Implementation\DoctrineORM\ProxyQuery;
 use Seydu\DataQueryFilter\ProxyQueryInterface;
 
 abstract class AbstractFilter implements FilterInterface
@@ -48,21 +50,23 @@ abstract class AbstractFilter implements FilterInterface
     }
 
     /**
-     * @param DoctrineORMProxyQuery $proxyQuery
+     * @param ProxyQuery $proxyQuery
      * @param FilterQueryBuilderInterface $filterQueryBuilder
+     * @param FilterDefinition $metadata
      * @param mixed $value
-     * @return ProxyQueryInterface|DoctrineORMProxyQuery
+     * @return ProxyQueryInterface|ProxyQuery
      */
-    abstract protected function doApply(DoctrineORMProxyQuery $proxyQuery, FilterQueryBuilderInterface $filterQueryBuilder, $value);
+    abstract protected function doApply(ProxyQuery $proxyQuery, FilterQueryBuilderInterface $filterQueryBuilder, FilterDefinition $metadata, $value);
 
     /**
-     * @param ProxyQueryInterface|DoctrineORMProxyQuery $proxyQuery
+     * @param ProxyQueryInterface|ProxyQuery $proxyQuery
      * @param FilterQueryBuilderInterface $filterQueryBuilder
+     * @param FilterDefinition $metadata
      * @param mixed $value
      * @return ProxyQueryInterface
      */
-    public function apply(ProxyQueryInterface $proxyQuery, FilterQueryBuilderInterface $filterQueryBuilder, $value)
+    public function apply(ProxyQueryInterface $proxyQuery, FilterQueryBuilderInterface $filterQueryBuilder, $metadata, $value)
     {
-        return $this->doApply($proxyQuery, $filterQueryBuilder, $value);
+        return $this->doApply($proxyQuery, $filterQueryBuilder, $metadata, $value);
     }
 }

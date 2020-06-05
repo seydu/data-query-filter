@@ -1,11 +1,14 @@
 <?php
 
 
-namespace Seydu\DataQueryFilter;
+namespace Seydu\DataQueryFilter\Implementation\DoctrineORM;
 
+
+use Seydu\DataQueryFilter\FilterDefinitionInterface;
 
 class FilterDefinition implements FilterDefinitionInterface
 {
+
     private $id;
     private $class;
     private $alias;

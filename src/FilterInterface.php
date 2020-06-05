@@ -25,8 +25,9 @@ interface FilterInterface
     /**
      * @param ProxyQueryInterface $proxyQuery
      * @param FilterQueryBuilderInterface $filterQueryBuilder
+     * @param mixed $metadata
      * @param mixed $value
      * @return ProxyQueryInterface
      */
-    public function apply(ProxyQueryInterface $proxyQuery, FilterQueryBuilderInterface $filterQueryBuilder, $value);
+    public function apply(ProxyQueryInterface $proxyQuery, FilterQueryBuilderInterface $filterQueryBuilder, $metadata, $value);
 }
