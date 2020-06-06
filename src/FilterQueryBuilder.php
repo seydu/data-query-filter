@@ -140,12 +140,13 @@ class FilterQueryBuilder implements FilterQueryBuilderInterface
             $this->addJoinsIfUndefined($filterService->getJoins());
         }
 
-        foreach ($resolvedFilterServices as $filterService) {
-            $filterId = $filterService->getId();
+        foreach ($filterDefinitions as $definition) {
+            $filterId = $definition->getId();
             if(!array_key_exists($filterId, $filterData)) {
                 continue;
             }
-            $proxyQuery = $filterService->apply($proxyQuery, $this, $filterData[$filterId]);
+            $filterService = $resolvedFilterServices[$filterId];
+            $proxyQuery = $filterService->apply($proxyQuery, $this, $definition->getMetadata(), $filterData[$filterId]);
         }
 
         $sortService = $this->resolveSortService($sortDefinition);

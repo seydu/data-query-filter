@@ -12,4 +12,8 @@ interface FilterDefinitionInterface
      */
     public function getId();
 
+    /**
+     * @return mixed
+     */
+    public function getMetadata();
 }

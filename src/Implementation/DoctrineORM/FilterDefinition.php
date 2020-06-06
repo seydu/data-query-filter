@@ -52,4 +52,12 @@ class FilterDefinition implements FilterDefinitionInterface
     {
         return $this->field;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getMetadata()
+    {
+        return $this;
+    }
 }
