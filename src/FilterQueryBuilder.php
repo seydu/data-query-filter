@@ -16,6 +16,11 @@ class FilterQueryBuilder implements FilterQueryBuilderInterface
     public function __construct(ResolverInterface $resolver)
     {
         $this->resolver = $resolver;
+        $this->reset();
+    }
+
+    private function reset()
+    {
         $this->joins = [];
         $this->appliedJoins = [];
     }
@@ -134,6 +139,8 @@ class FilterQueryBuilder implements FilterQueryBuilderInterface
 
     public function apply(ProxyQueryInterface $proxyQuery, FilterDefinitionSet $filterDefinitions, SortDefinitionInterface $sortDefinition, array $filterData)
     {
+        $this->reset();
+
         $resolvedFilterServices = $this->resolveFilterDefinitions($filterDefinitions);
 
         foreach ($resolvedFilterServices as $filterService) {
