@@ -33,7 +33,8 @@ class Resolver implements ResolverInterface
 
     private function doResolveSorter(DoctrineORMSortDefinition $sortDefinition)
     {
-        return new DoctrineORMSorter($sortDefinition);
+        $class = $sortDefinition->getClass();
+        return new $class($sortDefinition);
     }
     /**
      * @param SortDefinitionInterface $sortDefinition

@@ -13,4 +13,12 @@ class NoneSorter implements SorterInterface
     {
         return $proxyQuery;
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function getJoins()
+    {
+        return [];
+    }
 }

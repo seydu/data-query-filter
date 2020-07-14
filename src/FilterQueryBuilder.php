@@ -30,9 +30,9 @@ class FilterQueryBuilder implements FilterQueryBuilderInterface
         return isset($this->joins[$id]);
     }
 
-    private function addJoinDefinition(JoinInterface $join)
+    private function addJoinDefinition(JoinInterface $join, $override = false)
     {
-        if(isset($this->joins[$join->getId()])) {
+        if($this->isDefinedJoin($join->getId()) && !$override) {
             throw new \LogicException(sprintf(
                 "A join with id=%s has already been defined with class=%s",
                 $join->getId(),
@@ -48,6 +48,14 @@ class FilterQueryBuilder implements FilterQueryBuilderInterface
     {
         foreach ($joinDefinitions as $joinDefinition) {
             $this->addJoinDefinition($joinDefinition);
+        }
+        return $this;
+    }
+
+    public function setJoinDefinitions($joinDefinitions)
+    {
+        foreach ($joinDefinitions as $joinDefinition) {
+            $this->addJoinDefinition($joinDefinition, true);
         }
         return $this;
     }
@@ -157,6 +165,7 @@ class FilterQueryBuilder implements FilterQueryBuilderInterface
         }
 
         $sortService = $this->resolveSortService($sortDefinition);
+        $this->setJoinDefinitions($sortService->getJoins());
         $sortService->apply($proxyQuery);
         return $this->applyPendingJoins($proxyQuery);
     }

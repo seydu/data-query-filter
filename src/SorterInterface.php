@@ -11,4 +11,8 @@ interface SorterInterface
      * @return ProxyQueryInterface
      */
     public function apply(ProxyQueryInterface $proxyQuery);
+    /**
+     * @return JoinInterface[]
+     */
+    public function getJoins();
 }

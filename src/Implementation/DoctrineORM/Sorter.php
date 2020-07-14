@@ -35,4 +35,12 @@ class Sorter implements SorterInterface
          */
         return $this->doApply($proxyQuery);
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function getJoins()
+    {
+        return $this->sortDefinition->getJoins();
+    }
 }
