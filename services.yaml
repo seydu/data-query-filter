@@ -1,0 +1,15 @@
+services:
+    Seydu\DataQueryFilter\FilterQueryBuilderInterface:
+        alias: Seydu\DataQueryFilter\FilterQueryBuilder
+
+    Seydu\DataQueryFilter\ResolverInterface:
+        alias: Seydu\DataQueryFilter\Implementation\DoctrineORM\Resolver
+
+    Seydu\DataQueryFilter\FilterQueryBuilder:
+        public: true
+        arguments:
+            - '@Seydu\DataQueryFilter\ResolverInterface'
+
+    Seydu\DataQueryFilter\Implementation\DoctrineORM\Resolver:
+        public: true
+
