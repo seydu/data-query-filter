@@ -5,7 +5,6 @@ namespace Seydu\DataQueryFilter\Implementation\DoctrineORM\Filter;
 
 
 use Seydu\DataQueryFilter\FilterQueryBuilderInterface;
-use Seydu\DataQueryFilter\Implementation\DoctrineORM\Condition\EqualCondition;
 use Seydu\DataQueryFilter\Implementation\DoctrineORM\Condition\InCondition;
 use Seydu\DataQueryFilter\Implementation\DoctrineORM\Exception\UnexpectedDataType;
 use Seydu\DataQueryFilter\Implementation\DoctrineORM\FilterDefinition;

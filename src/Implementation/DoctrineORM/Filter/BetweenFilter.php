@@ -5,10 +5,8 @@ namespace Seydu\DataQueryFilter\Implementation\DoctrineORM\Filter;
 
 
 use Seydu\DataQueryFilter\FilterQueryBuilderInterface;
-use Seydu\DataQueryFilter\Implementation\DoctrineORM\Condition\EqualCondition;
 use Seydu\DataQueryFilter\Implementation\DoctrineORM\Condition\GreaterThanOrEqualCondition;
 use Seydu\DataQueryFilter\Implementation\DoctrineORM\Condition\LessThanOrEqualCondition;
-use Seydu\DataQueryFilter\Implementation\DoctrineORM\Condition\NullCondition;
 use Seydu\DataQueryFilter\Implementation\DoctrineORM\Exception\UnexpectedDataType;
 use Seydu\DataQueryFilter\Implementation\DoctrineORM\FilterDefinition;
 use Seydu\DataQueryFilter\Implementation\DoctrineORM\ProxyQuery;
