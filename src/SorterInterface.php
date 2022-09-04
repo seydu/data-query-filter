@@ -6,6 +6,8 @@ namespace Seydu\DataQueryFilter;
 
 interface SorterInterface
 {
+    public function setDefinition(SortDefinitionInterface $definition);
+
     /**
      * @param ProxyQueryInterface $proxyQuery
      * @return ProxyQueryInterface

@@ -9,14 +9,15 @@ use Seydu\DataQueryFilter\FilterDefinition;
 use Seydu\DataQueryFilter\FilterInterface;
 use Seydu\DataQueryFilter\FilterQueryBuilderInterface;
 use Seydu\DataQueryFilter\ProxyQueryInterface;
+use Seydu\DataQueryFilter\SorterCollection;
 
-class CollectionResolverTest extends TestCase
+class CollectionResolverFilterTest extends TestCase
 {
     public function test_resolve_successfully()
     {
         $filterCollection = new FilterCollection();
         $filterCollection->add(new FilterA());
-        $resolver = new CollectionResolver($filterCollection);
+        $resolver = new CollectionResolver($filterCollection, new SorterCollection());
         $definition = new FilterDefinition('a1', FilterA::class, 'name', 'alias');
         $filter = $resolver->resolveFilter($definition);
         $this->assertInstanceOf(FilterA::class, $filter);

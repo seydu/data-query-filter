@@ -5,15 +5,18 @@ namespace Seydu\DataQueryFilter\Implementation\DoctrineORM;
 
 
 use Seydu\DataQueryFilter\ProxyQueryInterface;
+use Seydu\DataQueryFilter\SortDefinitionInterface;
 use Seydu\DataQueryFilter\SorterInterface;
 
 class Sorter implements SorterInterface
 {
     private $sortDefinition;
-    public function __construct(SortDefinition $sortDefinition)
+
+    public function setDefinition(SortDefinitionInterface $definition)
     {
-        $this->sortDefinition = $sortDefinition;
+        $this->sortDefinition = $definition;
     }
+
 
     private function doApply(ProxyQuery $proxyQuery)
     {

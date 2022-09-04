@@ -23,7 +23,7 @@ class Resolver implements ResolverInterface
      * @param FilterDefinitionInterface $filterDefinition
      * @return FilterInterface
      */
-    public function resolveFilter(FilterDefinitionInterface $filterDefinition)
+    public function resolveFilter(FilterDefinitionInterface $filterDefinition): FilterInterface
     {
         /**
          * @var DoctrineORMFilterDefinition $filterDefinition
@@ -40,7 +40,7 @@ class Resolver implements ResolverInterface
      * @param SortDefinitionInterface $sortDefinition
      * @return SorterInterface
      */
-    public function resolveSorter(SortDefinitionInterface $sortDefinition)
+    public function resolveSorter(SortDefinitionInterface $sortDefinition): SorterInterface
     {
         /**
          * @var DoctrineORMSortDefinition $sortDefinition

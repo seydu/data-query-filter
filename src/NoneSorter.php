@@ -4,7 +4,6 @@ namespace Seydu\DataQueryFilter;
 
 class NoneSorter implements SorterInterface
 {
-
     /**
      * @param ProxyQueryInterface $proxyQuery
      * @return ProxyQueryInterface
@@ -20,5 +19,9 @@ class NoneSorter implements SorterInterface
     public function getJoins()
     {
         return [];
+    }
+
+    public function setDefinition(SortDefinitionInterface $definition)
+    {
     }
 }

@@ -25,7 +25,7 @@ class SortDefinition implements SortDefinitionInterface
     /**
      * @return mixed
      */
-    public function getClass()
+    public function getClass(): string
     {
         return $this->class;
     }

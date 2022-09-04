@@ -10,11 +10,11 @@ interface ResolverInterface
      * @param FilterDefinitionInterface $filterDefinition
      * @return FilterInterface
      */
-    public function resolveFilter(FilterDefinitionInterface $filterDefinition);
+    public function resolveFilter(FilterDefinitionInterface $filterDefinition): FilterInterface;
 
     /**
      * @param SortDefinitionInterface $sortDefinition
      * @return SorterInterface
      */
-    public function resolveSorter(SortDefinitionInterface $sortDefinition);
+    public function resolveSorter(SortDefinitionInterface $sortDefinition): SorterInterface;
 }

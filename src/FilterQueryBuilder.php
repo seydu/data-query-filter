@@ -139,9 +139,6 @@ class FilterQueryBuilder implements FilterQueryBuilderInterface
 
     private function resolveSortService(SortDefinitionInterface $sortDefinition)
     {
-        if ($sortDefinition->isEmpty()) {
-            return new NoneSorter();
-        }
         return $this->resolver->resolveSorter($sortDefinition);
     }
 
