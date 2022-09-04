@@ -49,4 +49,9 @@ class FilterDefinition implements FilterDefinitionInterface
     {
         return $this->field;
     }
+
+    public function getMetadata()
+    {
+
+    }
 }

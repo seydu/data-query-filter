@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Seydu\DataQueryFilter;
+namespace Seydu\Tests\DataQueryFilter;
 
 class ExampleTest extends \PHPUnit\Framework\TestCase
 {

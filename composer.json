@@ -25,7 +25,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Seydu\\DataQueryFilter\\": "src"
+            "Seydu\\Tests\\DataQueryFilter\\": "src"
         }
     },
     "autoload-dev": {
