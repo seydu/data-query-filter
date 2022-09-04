@@ -25,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Seydu\\Tests\\DataQueryFilter\\": "src"
+            "Seydu\\DataQueryFilter\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Seydu\\DataQueryFilter\\": "tests"
+            "Seydu\\Tests\\DataQueryFilter\\": "tests"
         }
     },
     "scripts": {

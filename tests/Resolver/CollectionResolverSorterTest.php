@@ -5,12 +5,9 @@ namespace Seydu\Tests\DataQueryFilter;
 use PHPUnit\Framework\TestCase;
 use Seydu\DataQueryFilter\CollectionResolver;
 use Seydu\DataQueryFilter\FilterCollection;
-use Seydu\DataQueryFilter\FilterDefinition;
-use Seydu\DataQueryFilter\FilterInterface;
-use Seydu\DataQueryFilter\FilterQueryBuilderInterface;
-use Seydu\DataQueryFilter\JoinInterface;
 use Seydu\DataQueryFilter\ProxyQueryInterface;
 use Seydu\DataQueryFilter\SortDefinition;
+use Seydu\DataQueryFilter\SortDefinitionInterface;
 use Seydu\DataQueryFilter\SorterCollection;
 use Seydu\DataQueryFilter\SorterInterface;
 
@@ -40,7 +37,7 @@ class SorterA implements SorterInterface
         // TODO: Implement getJoins() method.
     }
 
-    public function setDefinition(SortDefinition $definition)
+    public function setDefinition(SortDefinitionInterface $definition)
     {
         // TODO: Implement setDefinition() method.
     }
